@@ -8,11 +8,11 @@
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.informationconfig.spring.practica1</groupId>
-	<artifactId>springboot-app</artifactId>
+	<groupId>com.corporativoX</groupId>
+	<artifactId>cursoSpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-app</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Curso con SpringBoot</name>
+	<description>Proyecto de un microservicio para el curso Springboot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -27,19 +27,9 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>23</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
