@@ -1,13 +1,13 @@
-package com.informationconfig.spring.practica1.springboot_app;
+package cursoSpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootAppApplication {
+public class CursoConSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootAppApplication.class, args);
+		SpringApplication.run(CursoConSpringBootApplication.class, args);
 	}
 
 }
