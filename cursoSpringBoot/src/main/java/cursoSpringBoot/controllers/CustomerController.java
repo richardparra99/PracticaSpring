@@ -55,10 +55,13 @@ public class CustomerController {
                 c.setName(customer.getName());
                 c.setUsername(customer.getUsername());
                 c.setPassword(customer.getPassword());
-                return ResponseEntity.ok("Cliente actualizado: " + customer.getName());
+                //mensaje personalizado
+                //return ResponseEntity ok("Cliente actualizado: " + customer.getName());
+                return ResponseEntity.noContent().build(); //-- mensaje no personalizado
             }
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: " + customer.getName());
+        //return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: " + customer.getName());
+        return ResponseEntity.notFound().build();
     }
 
     //@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -67,10 +70,12 @@ public class CustomerController {
         for (Customer c : customers){
             if (c.getID() == id){
                 customers.remove(c);
-                return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Cliente eliminado: " + id);
+                //return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Cliente eliminado: " + id);
+                return ResponseEntity.noContent().build();
             }
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: " + id);
+        //return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente no encontrado: " + id);
+        return ResponseEntity.notFound().build();
     }
 
     //@RequestMapping(method = RequestMethod.PATCH)

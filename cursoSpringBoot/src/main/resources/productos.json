@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop asus tuf gamming",
+    "precio": 799.99,
+    "stock": 12
+  },
+  {
+    "id": 2,
+    "nombre": "Samsung Galaxy 24",
+    "precio": 600.66,
+    "stock": 20
+  },
+  {
+    "id": 3,
+    "nombre": "Iphone 15 pro Max",
+    "precio": 780.0,
+    "stock": 15
+  },
+  {
+    "id": 4,
+    "nombre": "Nike Air For One black",
+    "precio": 500.5,
+    "stock": 2
+  }
+]
