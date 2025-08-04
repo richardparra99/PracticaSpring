@@ -1,14 +1,22 @@
 package cursoSpringBoot.service;
 
 import cursoSpringBoot.domain.Producto;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service("listasRecursoServicio")
+@Lazy
+@Service
+@ConditionalOnProperty(name = "servicio.productos", havingValue = "listas")
 public class ProductosServicioImpl implements ProductoServicio {
+
+    public ProductosServicioImpl(){
+        System.out.println("instancia de la clase productoServicioLists");
+    }
     List<Producto> productos = new ArrayList<>(Arrays.asList(
             new Producto(1, "Laptop asus gamer rog", 799.99, 5),
             new Producto(2, "Samsung Galaxy 25", 600.66,10),
