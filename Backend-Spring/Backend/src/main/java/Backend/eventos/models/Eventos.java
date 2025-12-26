@@ -1,5 +1,6 @@
 package Backend.eventos.models;
 
+import Backend.usuario.model.Usuario;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -42,7 +43,21 @@ public class Eventos {
     @Column(name = "activo", nullable = false)
     private Boolean activo = true;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "organizador_id", nullable = false)
+    private Usuario organizador;
+
+
     public Eventos() {}
+
+
+    public Usuario getOrganizador() {
+        return organizador;
+    }
+
+    public void setOrganizador(Usuario organizador) {
+        this.organizador = organizador;
+    }
 
     public Long getId() {
         return id;
