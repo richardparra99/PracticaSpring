@@ -18,7 +18,13 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
-    public Usuario() {}
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private Rol rol = Rol.PARTICIPANTE;
+
+    public Usuario() {
+    }
+
     public Usuario(Long id, String nombre, String email, String password) {
         this.id = id;
         this.nombre = nombre;
@@ -56,5 +62,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 }

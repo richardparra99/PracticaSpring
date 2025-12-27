@@ -4,6 +4,7 @@ import Backend.auth.dto.AuthReponse;
 import Backend.auth.dto.LoginRequest;
 import Backend.auth.dto.RegisterRequest;
 import Backend.security.JwtService;
+import Backend.usuario.model.Rol;
 import Backend.usuario.model.Usuario;
 import Backend.usuario.repository.UsuarioRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,6 +30,7 @@ public class AuthService {
         usuario.setNombre(request.getNombre());
         usuario.setEmail(request.getEmail());
         usuario.setPassword(passwordEncoder.encode(request.getPassword()));
+        usuario.setRol(Rol.PARTICIPANTE);
         usuarioRepository.save(usuario);
     }
 

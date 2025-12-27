@@ -1,7 +1,9 @@
 package Backend.security;
 
+import Backend.usuario.model.Rol;
 import Backend.usuario.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -16,17 +18,18 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        Rol rolEnum = (usuario.getRol() == null) ? Rol.PARTICIPANTE : usuario.getRol();
+        return List.of(new SimpleGrantedAuthority("ROLE_" + rolEnum.name()));
     }
 
     @Override
     public String getPassword() {
-        return "";
+        return usuario.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return usuario.getEmail();
     }
 
     public Usuario getUsuario() {
