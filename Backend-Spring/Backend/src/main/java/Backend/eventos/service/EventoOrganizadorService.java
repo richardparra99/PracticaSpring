@@ -76,7 +76,7 @@ public class EventoOrganizadorService {
     public List<EventoOrganizadorResponse> listarMisEventos() {
         Usuario organizador = getUsuarioLogueado();
 
-        return eventoRepository.findByActivoTrueAndFechaHoraGreaterThanEqualOrderByFechaHoraAsc(organizador.getId())
+        return eventoRepository.findByOrganizador_IdAndActivoTrueOrderByFechaHoraDesc(organizador.getId())
                 .stream()
                 .map(this::toResponse)
                 .toList();

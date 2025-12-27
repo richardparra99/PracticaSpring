@@ -9,6 +9,8 @@ import java.util.Optional;
 
 public interface EventoRepository extends JpaRepository<Eventos, Long> {
 
-    List<Eventos> findByActivoTrueAndFechaHoraGreaterThanEqualOrderByFechaHoraAsc(Long organizador);
+    List<Eventos> findByActivoTrueAndFechaHoraGreaterThanEqualOrderByFechaHoraAsc(LocalDateTime now);
+    // Organizador
+    List<Eventos> findByOrganizador_IdAndActivoTrueOrderByFechaHoraDesc(Long organizadorId);
     Optional<Eventos> findByIdAndOrganizador_Id(Long id, Long organizadorId);
 }
