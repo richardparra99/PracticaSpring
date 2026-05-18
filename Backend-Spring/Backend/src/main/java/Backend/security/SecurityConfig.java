@@ -64,13 +64,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // preflight
                         .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
 
                         // auth público
                         .requestMatchers("/api/auth/**").permitAll()
 
-                        // ✅ reglas por rol (ajusta a tus rutas reales)
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/organizador/**").hasRole("ORGANIZADOR")
                         .requestMatchers("/api/participante/**").hasRole("PARTICIPANTE")
